@@ -24,7 +24,7 @@
 
 # variable for the playable area
 game_field = [[]]
-#variable for playable area size
+# variable for playable area size
 game_field_size = 10
 # variable for number of battleships intended for placement
 amount_of_battleships = 10
@@ -36,7 +36,7 @@ game_over = False
 num_of_destroyed_battleships = 0
 # variable for battleship positions
 battleship_coordinates = [[]]
-#variable for vertical grid
+# variable for vertical grid
 vertical_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
@@ -74,5 +74,19 @@ def attempt_to_place_battleship_on_field(row, column, orientation, size):
         if column + size >= game_field_size:
             return False
         end_column = column + size
+
+
+    elif orientation == "up":
+        if row - size < 0:
+            return False
+        begin_row = row - size + 1
+
+    elif orientation == "down":
+        if row + size >= game_field_size:
+            return False
+        end_row = row + size
+
+    return validate_position_and_place_battleship(begin_row, end_row, begin_column, end_column)
+
 
    
