@@ -89,4 +89,16 @@ def attempt_to_place_battleship_on_field(row, column, orientation, size):
     return validate_position_and_place_battleship(begin_row, end_row, begin_column, end_column)
 
 
+def construct_game_field():
+    global game_field
+    global game_field_size
+    global amount_of_battleships
+    global battleship_coordinates
+
+    random.seed(time.time())
+
+    rows, columns = (game_field_size, game_field_size)
+
+
+
    
