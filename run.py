@@ -12,7 +12,7 @@
 """
     Symbols that will be used as indicators in the game:
 
-     "." -missed shot
+     "!" -missed shot
 
      "O" -area of the ship
 
@@ -39,3 +39,22 @@ battleship_coordinates = [[]]
 #variable for vertical grid
 vertical_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+
+
+def validate_position_and_place_battleship(begin_column, end_column, begin_row, end_row):
+    
+    global game_field
+    global battleship_coordinates
+
+    all_positions_validated = True
+    for i in range(begin_row, end_row):
+        for j in range(begin_column, end_column):
+            if game_field[i][j] != "!":
+                all_positions_validated = False
+                break
+    if all_positions_validated:
+        battleship_coordinates.append([begin_column, end_column, begin_row, end_row])
+        for i in range(begin_row, end_row):
+            for j in range(begin_column, end_column):
+                game_field[i][j] = "O"
+    return all_positions_validated
