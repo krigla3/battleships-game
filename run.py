@@ -58,3 +58,21 @@ def validate_position_and_place_battleship(begin_column, end_column, begin_row, 
             for j in range(begin_column, end_column):
                 game_field[i][j] = "O"
     return all_positions_validated
+
+    
+def attempt_to_place_battleship_on_field(row, column, orientation, size):
+
+    global game_field_size
+
+    begin_row, end_row, begin_column, end_column = row, row + 1, column, column + 1
+    if orientation == "left":
+        if column - size < 0:
+            return False
+        begin_column = column - size + 1
+
+    elif orientation == "right":
+        if column + size >= game_field_size:
+            return False
+        end_column = column + size
+
+   
