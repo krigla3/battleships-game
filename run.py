@@ -237,3 +237,25 @@ def validate_if_game_over():
         print("We are out of ammo, this battle has ben lost!")
         game_over = True
 
+def main():
+    
+    global game_over
+
+    print("******Welcome to Battleships********")
+    print("You have 30 rounds of ammo, beware as there is 8 battleships to be destroyed, may the gods of war be on your side!")
+
+    construct_game_field()
+
+    while game_over is False:
+        print_game_field()
+        print("Number of battleships remaining: " + str(amount_of_battleships - num_of_destroyed_battleships))
+        print("Ammount of ammo left: " + str(ammo_left))
+        fire_shot()
+        print("----------------------------")
+        print("")
+        validate_if_game_over()
+
+
+if __name__ == '__main__':
+    
+    main()
