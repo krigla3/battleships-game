@@ -180,3 +180,21 @@ def confirm_valid_shot_placement():
             valid_placement = True
 
     return row, column
+
+def validate_battleship_destroyed(row, column):
+    
+    global battleship_coordinates
+    global game_field
+
+    for coordinate in battleship_coordinates:
+        begin_row = coordinate[0]
+        end_row = coordinate[1]
+        begin_column = coordinate[2]
+        end_column = coordinate[3]
+        if begin_row <= row <= end_row and begin_column <= column <= end_column:
+           
+            for i in range(begin_row, end_row):
+                for j in range(begin_column, end_column):
+                    if grid[i][j] != "X":
+                        return False
+    return True
