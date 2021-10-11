@@ -223,3 +223,17 @@ def fire_shot():
 
     ammo_left -= 1
 
+def validate_if_game_over():
+    
+    global num_of_destroyed_battleships
+    global amount_of_battleships
+    global ammo_left
+    global game_over
+
+    if amount_of_battleships == num_of_ships_sunk:
+        print("Congratulations comander all ships have been destroyed!")
+        game_over = True
+    elif ammo_left <= 0:
+        print("We are out of ammo, this battle has ben lost!")
+        game_over = True
+
