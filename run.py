@@ -144,3 +144,39 @@ def print_game_field():
     for i in range(len(game_field[0])):
         print(str(i), end=" ")
     print("")
+
+
+def confirm_valid_shot_placement():
+ 
+    global vertical_letters
+    global game_field
+
+    valid_placement = False
+    row = -1
+    column = -1
+    while valid_placement is False:
+        position = input("Please enter row (A-J) and column (0-9), valid example: B7: ")
+        position = position.upper()
+        if len(position) <= 0 or len(position) > 2:
+            print("Error: Please check to input only one row and column such as B7")
+            continue
+        row = position[0]
+        column = position[1]
+        if not row.isalpha() or not column.isnumeric():
+            print("Error: Please input a leter from (A-J) for row, and number from (0-9) for column")
+            continue
+        row = vertical_letters.find(row)
+        if not (-1 < row < game_field):
+            print("Error: Please input a leter from (A-J) for row, and number from (0-9) for column")
+            continue
+        col = int(column)
+        if not (-1 < column < game_field):
+            print("Error: Please input a leter from (A-J) for row, and number from (0-9) for column")
+            continue
+        if game_field[row][column] == "~" or game_field[row][column] == "X":
+            print("This target has already been hit, please chose other coordinates")
+            continue
+        if game_field[row][column] == "!" or grid[row][col] == "O":
+            valid_placement = True
+
+    return row, column
