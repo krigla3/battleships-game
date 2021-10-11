@@ -29,7 +29,7 @@ game_field_size = 10
 # variable for number of battleships intended for placement
 amount_of_battleships = 10
 # variable for ammunition remaining
-bullets_left = 30
+ammo_left = 30
 # variable for game over
 game_over = False
 # variable for number of battleships destroyed
@@ -198,3 +198,28 @@ def validate_battleship_destroyed(row, column):
                     if grid[i][j] != "X":
                         return False
     return True
+
+def fire_shot():
+    
+    global game_field
+    global num_of_destroyed_battleships
+    global ammo_left
+
+    row, column = confirm_valid_shot_placement()
+    print("")
+    print("-------------------")
+
+    if game_field[row][column] == "!":
+        print("Shot missed, no battleship was hit")
+        game_field[row][column] = "~"
+    elif game_field[row][column] == "O":
+        print("Hit!!!", end=" ")
+        game_field[row][col] = "X"
+        if validate_battleship_destroyed(row, column):
+            print("Battleship destroyed!!!")
+            num_of_destroyed_battleships += 1
+        else:
+            print("A battleship was hit!")
+
+    ammo_left -= 1
+
