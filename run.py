@@ -99,6 +99,34 @@ def construct_game_field():
 
     rows, columns = (game_field_size, game_field_size)
 
+    
+    game_field = []
+    for i in range(rows):
+        row = []
+        for j in range(columns):
+            row.append("!")
+        game_field.append(row)
+
+    amount_of_placed_battleships = 0
+
+    ship_positions = []
+
+    while amount_of_placed_battleships != amount_of_battleships:
+        random_row = random.randint(0, rows - 1)
+        random_column = random.randint(0, cols - 1)
+        orientation = random.choice(["right", "left", "up", "down"])
+        battleship_size = random.randint(3, 5)
+        if attempt_to_place_battleship_on_field(random_row, random_column, orientation, battleship_size):
+            amount_of_placed_battleships += 1
+
+def print_game_field():
+
+    global game_field
+    global vertical_letters
+
+    
+
+    
 
 
    
