@@ -101,7 +101,7 @@ def construct_game_field():
 
     
     game_field = []
-    for i in range(rows):
+    for r in range(rows):
         row = []
         for j in range(columns):
             row.append("!")
@@ -124,9 +124,23 @@ def print_game_field():
     global game_field
     global vertical_letters
 
-    
+    debug_mode = True
 
-    
+    vertical_letters = vertical_letters[0: len(game_field) + 1]
 
+    for row in range(len(game_field)):
+        print(vertical_letters[row], end=") ")
+        for column in range(len(game_field[row])):
+            if game_field[row][column] == "O":
+                if debug_mode:
+                    print("O", end=" ")
+                else:
+                    print("!", end=" ")
+            else:
+                print(game_field[row][column], end=" ")
+        print("")
 
-   
+    print("  ", end=" ")
+    for i in range(len(game_field[0])):
+        print(str(i), end=" ")
+    print("")
