@@ -214,7 +214,7 @@ def fire_shot():
         game_field[row][column] = "~"
     elif game_field[row][column] == "O":
         print("Hit!!!", end=" ")
-        game_field[row][col] = "X"
+        game_field[row][column] = "X"
         if validate_battleship_destroyed(row, column):
             print("Battleship destroyed!!!")
             num_of_destroyed_battleships += 1
