@@ -1,3 +1,6 @@
+import random
+import time
+
 """
     Battleship game
     
@@ -27,7 +30,7 @@ game_field = [[]]
 # variable for playable area size
 game_field_size = 10
 # variable for number of battleships intended for placement
-amount_of_battleships = 10
+amount_of_battleships = 5
 # variable for ammunition remaining
 ammo_left = 30
 # variable for game over
@@ -109,18 +112,18 @@ def construct_game_field():
 
     amount_of_placed_battleships = 0
 
-    ship_positions = []
+    battleship_coordinates = []
 
     while amount_of_placed_battleships != amount_of_battleships:
         random_row = random.randint(0, rows - 1)
-        random_column = random.randint(0, cols - 1)
+        random_column = random.randint(0, columns - 1)
         orientation = random.choice(["right", "left", "up", "down"])
         battleship_size = random.randint(3, 5)
         if attempt_to_place_battleship_on_field(random_row, random_column, orientation, battleship_size):
             amount_of_placed_battleships += 1
 
 def print_game_field():
-
+    
     global game_field
     global vertical_letters
 
@@ -166,17 +169,17 @@ def confirm_valid_shot_placement():
             print("Error: Please input a leter from (A-J) for row, and number from (0-9) for column")
             continue
         row = vertical_letters.find(row)
-        if not (-1 < row < game_field):
+        if not (-1 < row < game_field_size):
             print("Error: Please input a leter from (A-J) for row, and number from (0-9) for column")
             continue
-        col = int(column)
-        if not (-1 < column < game_field):
+        column = int(column)
+        if not (-1 < column < game_field_size):
             print("Error: Please input a leter from (A-J) for row, and number from (0-9) for column")
             continue
         if game_field[row][column] == "~" or game_field[row][column] == "X":
             print("This target has already been hit, please chose other coordinates")
             continue
-        if game_field[row][column] == "!" or grid[row][col] == "O":
+        if game_field[row][column] == "!" or game_field[row][column] == "O":
             valid_placement = True
 
     return row, column
@@ -195,7 +198,7 @@ def validate_battleship_destroyed(row, column):
            
             for i in range(begin_row, end_row):
                 for j in range(begin_column, end_column):
-                    if grid[i][j] != "X":
+                    if game_field[i][j] != "X":
                         return False
     return True
 
@@ -230,7 +233,7 @@ def validate_if_game_over():
     global ammo_left
     global game_over
 
-    if amount_of_battleships == num_of_ships_sunk:
+    if amount_of_battleships == num_of_destroyed_battleships:
         print("Congratulations comander all ships have been destroyed!")
         game_over = True
     elif ammo_left <= 0:
