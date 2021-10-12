@@ -159,7 +159,7 @@ def confirm_valid_shot_placement():
     row = -1
     column = -1
     while valid_placement is False:
-        position = input("Please enter row (A-J) and column (0-9), valid example: B7: ")
+        position = input("Please enter row (A-J) and column (0-9), valid example: B7:\n")
         position = position.upper()
         if len(position) <= 0 or len(position) > 2:
             print("Error: Please check to input only one row and column such as B7")
