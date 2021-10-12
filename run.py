@@ -30,7 +30,7 @@ game_field = [[]]
 # variable for playable area size
 game_field_size = 10
 # variable for number of battleships intended for placement
-amount_of_battleships = 1
+amount_of_battleships = 5
 # variable for ammunition remaining
 ammo_left = 30
 # variable for game over
@@ -41,6 +41,7 @@ num_of_destroyed_battleships = 0
 battleship_coordinates = [[]]
 # variable for vertical grid
 vertical_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    
 
 
 
@@ -136,7 +137,7 @@ def print_game_field():
         for column in range(len(game_field[row])):
             if game_field[row][column] == "O":
                 if debug_mode:
-                    print("O", end=" ")
+                    print("~", end=" ")
                 else:
                     print("~", end=" ")
             else:
