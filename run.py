@@ -3,7 +3,7 @@ import time
 
 """
     Battleship game
-    
+
     - the game will be made on a 10x10 grid area.
     - the number of battleships per player will be 5.
     - each batteship can be placed verticaly or horizontaly, no diagonal placements.
@@ -15,13 +15,13 @@ import time
 """
     Symbols that will be used as indicators in the game:
 
-     "!" -missed shot
+     "~" -missed shot
 
      "O" -area of the ship
 
      "X" -confirmed hit
 
-     "~" -missed hit on open water
+     "!" -missed hit on open water
 
 """
 
@@ -30,7 +30,7 @@ game_field = [[]]
 # variable for playable area size
 game_field_size = 10
 # variable for number of battleships intended for placement
-amount_of_battleships = 4
+amount_of_battleships = 1
 # variable for ammunition remaining
 ammo_left = 30
 # variable for game over
@@ -52,11 +52,11 @@ def validate_position_and_place_battleship(begin_column, end_column, begin_row, 
     all_positions_validated = True
     for i in range(begin_row, end_row):
         for j in range(begin_column, end_column):
-            if game_field[i][j] != "!":
+            if game_field[i][j] != "~":
                 all_positions_validated = False
                 break
     if all_positions_validated:
-        battleship_coordinates.append([begin_column, end_column, begin_row, end_row])
+        battleship_coordinates.append([begin_row, end_row, begin_column, end_column])
         for i in range(begin_row, end_row):
             for j in range(begin_column, end_column):
                 game_field[i][j] = "O"
@@ -107,7 +107,7 @@ def construct_game_field():
     for r in range(rows):
         row = []
         for j in range(columns):
-            row.append("!")
+            row.append("~")
         game_field.append(row)
 
     amount_of_placed_battleships = 0
@@ -138,7 +138,7 @@ def print_game_field():
                 if debug_mode:
                     print("O", end=" ")
                 else:
-                    print("!", end=" ")
+                    print("~", end=" ")
             else:
                 print(game_field[row][column], end=" ")
         print("")
@@ -176,10 +176,10 @@ def confirm_valid_shot_placement():
         if not (-1 < column < game_field_size):
             print("Error: Please input a leter from (A-J) for row, and number from (0-9) for column")
             continue
-        if game_field[row][column] == "~" or game_field[row][column] == "X":
+        if game_field[row][column] == "!" or game_field[row][column] == "X":
             print("This target has already been hit, please chose other coordinates")
             continue
-        if game_field[row][column] == "!" or game_field[row][column] == "O":
+        if game_field[row][column] == "~" or game_field[row][column] == "O":
             valid_placement = True
 
     return row, column
@@ -210,11 +210,11 @@ def fire_shot():
 
     row, column = confirm_valid_shot_placement()
     print("")
-    print("---------------------------")
+    print("-------------------------------------")
 
-    if game_field[row][column] == "!":
-        print("Shot missed, no battleship was hit")
-        game_field[row][column] = "~"
+    if game_field[row][column] == "~":
+        print("Shot missed, no battleship was hit.")
+        game_field[row][column] = "!"
     elif game_field[row][column] == "O":
         print("Hit!!!", end=" ")
         game_field[row][column] = "X"
@@ -234,7 +234,7 @@ def validate_if_game_over():
     global game_over
 
     if amount_of_battleships == num_of_destroyed_battleships:
-        print("Congratulations comander all ships have been destroyed!")
+        print("Congratulations commander all battleships have been destroyed!")
         game_over = True
     elif ammo_left <= 0:
         print("We are out of ammo, this battle has ben lost!")
@@ -244,8 +244,8 @@ def main():
     
     global game_over
 
-    print("******Welcome to Battleships********")
-    print("You have 30 rounds of ammo, beware as there is 8 battleships to be destroyed, may the gods of war be on your side!")
+    print("******Welcome to Battleships Commander******")
+    print("You are equiped with 30 rounds of ammo, beware as there is 5 battleships to be destroyed.\nMay the gods of war be on your side and good luck!")
 
     construct_game_field()
 
@@ -254,7 +254,7 @@ def main():
         print("Number of battleships remaining: " + str(amount_of_battleships - num_of_destroyed_battleships))
         print("Ammount of ammo left: " + str(ammo_left))
         fire_shot()
-        print("----------------------------")
+        print("-------------------------------------")
         print("")
         validate_if_game_over()
 
