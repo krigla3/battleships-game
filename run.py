@@ -8,8 +8,8 @@ import time
     - the number of battleships per player will be 5.
     - each batteship can be placed verticaly or horizontaly, no diagonal placements.
     - the player will be able to select a column and row where the desired shot will impact.
-    - the number of shots will be 30 or potentially more
-    - the game is one once all 4 ships of the enemy player have been destroyed.
+    - the number of shots will be 30 or potentially more.
+    - the game is done once all 5 ships of the enemy player have been destroyed or when the player is out of ammo.
 """
 
 """
@@ -17,7 +17,7 @@ import time
 
      "~" -missed shot
 
-     "O" -area of the ship
+     "O" -area of the ship - (used only while coding for testing purpose)
 
      "X" -confirmed hit
 
@@ -25,22 +25,22 @@ import time
 
 """
 
-# variable for the playable area
-game_field = [[]]
-# variable for playable area size
-game_field_size = 10
-# variable for number of battleships intended for placement
-amount_of_battleships = 5
-# variable for ammunition remaining
-ammo_left = 30
-# variable for game over
-game_over = False
-# variable for number of battleships destroyed
-num_of_destroyed_battleships = 0
-# variable for battleship positions
-battleship_coordinates = [[]]
-# variable for vertical grid
-vertical_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+game_field = [[]] # variable for the playable area
+
+game_field_size = 10 # variable for playable area size
+
+amount_of_battleships = 5 # variable for number of battleships intended for placement
+
+ammo_left = 30 # variable for ammunition remaining
+
+game_over = False # variable for game over
+
+num_of_destroyed_battleships = 0 # variable for number of battleships destroyed
+
+battleship_coordinates = [[]] # variable for battleship positions
+
+vertical_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" # variable for vertical grid
                     
 
 
