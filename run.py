@@ -51,14 +51,14 @@ def validate_position_and_place_battleship(begin_column, end_column, begin_row, 
     global battleship_coordinates
 
     all_positions_validated = True
-    for i in range(begin_row, end_row):
+    for i in range(begin_row, end_row): # the for loop validates if all the positions are empty or  water.
         for j in range(begin_column, end_column):
             if game_field[i][j] != "~":
                 all_positions_validated = False
                 break
-    if all_positions_validated:
+    if all_positions_validated: # if all valid the next loop will place the battleships on the game field and show their position (for testing purpose)
         battleship_coordinates.append([begin_row, end_row, begin_column, end_column])
-        for i in range(begin_row, end_row):
+        for i in range(begin_row, end_row): 
             for j in range(begin_column, end_column):
                 game_field[i][j] = "O"
     return all_positions_validated
@@ -70,7 +70,7 @@ def attempt_to_place_battleship_on_field(row, column, orientation, size):
 
     begin_row, end_row, begin_column, end_column = row, row + 1, column, column + 1
     if orientation == "left":
-        if column - size < 0:
+        if column - size < 0: #the condition will check if the battleship is trying to be placed outside the limits of the game field.
             return False
         begin_column = column - size + 1
 
@@ -88,7 +88,8 @@ def attempt_to_place_battleship_on_field(row, column, orientation, size):
         if row + size >= game_field_size:
             return False
         end_row = row + size
-
+# Once the upper four variables have been calculated taking in consideration the direction the "validate_position_and_place_battleship" 
+# function is called to place the battleship on the game field.
     return validate_position_and_place_battleship(begin_row, end_row, begin_column, end_column)
 
 # Function is used to create the game field in 10x10 grid.
@@ -99,9 +100,9 @@ def construct_game_field():
     global amount_of_battleships
     global battleship_coordinates
 
-    random.seed(time.time())
+    random.seed(time.time()) # method bases the random sequence every time the program is being run.
 
-    rows, columns = (game_field_size, game_field_size)
+    rows, columns = (game_field_size, game_field_size) 
 
     game_field = []
     for r in range(rows):
@@ -114,8 +115,8 @@ def construct_game_field():
 
     battleship_coordinates = []
 
-    while amount_of_placed_battleships != amount_of_battleships:
-        random_row = random.randint(0, rows - 1)
+    while amount_of_placed_battleships != amount_of_battleships: # while loop randomly places battleships on the grid using four variables
+        random_row = random.randint(0, rows - 1)                 # battleship size, direction, colum and row all all randomized. 
         random_column = random.randint(0, columns - 1)
         orientation = random.choice(["right", "left", "up", "down"])
         battleship_size = random.randint(3, 5)
@@ -127,16 +128,16 @@ def print_game_field():
     global game_field
     global vertical_letters
 
-    debug_mode = True
+    test_mode = True
 
     vertical_letters = vertical_letters[0: len(game_field) + 1]
 
     for row in range(len(game_field)):
-        print(vertical_letters[row], end=") ")
+        print(vertical_letters[row], end=") ") # prints out the vertical letters for the game field.
         for column in range(len(game_field[row])):
             if game_field[row][column] == "O":
-                if debug_mode:
-                    print("~", end=" ")
+                if test_mode:
+                    print("~", end=" ") # used for test mode to see the ships and test the shots fired.
                 else:
                     print("~", end=" ")
             else:
@@ -146,7 +147,7 @@ def print_game_field():
     print("  ", end=" ")
     for i in range(len(game_field[0])):
         print(str(i), end=" ")
-    print("")
+    print("")   # prints out all of the horizontal numbers for the game field.
 
 # function uses the input method to record players choice on the grid, 
 # and also validates if the imput was written in correct form based on the player's input.
@@ -196,7 +197,6 @@ def validate_battleship_destroyed(row, column):
         begin_column = coordinate[2]
         end_column = coordinate[3]
         if begin_row <= row <= end_row and begin_column <= column <= end_column:
-           
             for i in range(begin_row, end_row):
                 for j in range(begin_column, end_column):
                     if game_field[i][j] != "X":
@@ -243,7 +243,7 @@ def validate_if_game_over():
         print("We are out of ammo, this battle has ben lost!")
         game_over = True
 
-def main():
+def main(): # puts the whole game in a game loop. 
     global game_over
 
     print("******Welcome to Battleships Commander******")
