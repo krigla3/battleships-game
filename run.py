@@ -11,7 +11,6 @@ import time
     - the number of shots will be 30 or potentially more.
     - the game is done once all 5 ships of the enemy player have been destroyed or when the player is out of ammo.
 """
-
 """
     Symbols that will be used as indicators in the game:
 
@@ -22,9 +21,7 @@ import time
      "X" -confirmed hit
 
      "!" -missed hit on open water
-
 """
-
 
 game_field = [[]] # variable for the playable area
 
@@ -32,7 +29,7 @@ game_field_size = 10 # variable for playable area size
 
 amount_of_battleships = 5 # variable for number of battleships intended for placement
 
-ammo_left = 30 # variable for ammunition remaining
+ammo_left = 60 # variable for ammunition remaining
 
 game_over = False # variable for game over
 
@@ -41,9 +38,7 @@ num_of_destroyed_battleships = 0 # variable for number of battleships destroyed
 battleship_coordinates = [[]] # variable for battleship positions
 
 vertical_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" # variable for vertical grid
-                    
-
-
+                         
 # Function will check the rows and the columns in the game field in order to correctly place the battleship on the field
 # by preventing overlap with the already placed battleship.
 def validate_position_and_place_battleship(begin_column, end_column, begin_row, end_row):   
@@ -100,7 +95,7 @@ def construct_game_field():
     global amount_of_battleships
     global battleship_coordinates
 
-    random.seed(time.time()) # method bases the random sequence every time the program is being run.
+    random.seed(time.time())  # method bases the random sequence every time the program is being run.
 
     rows, columns = (game_field_size, game_field_size) 
 
@@ -240,14 +235,14 @@ def validate_if_game_over():
         print("Congratulations commander all battleships have been destroyed!")
         game_over = True
     elif ammo_left <= 0:
-        print("We are out of ammo, this battle has ben lost!")
+        print("We are out of ammo, this battle has been lost!")
         game_over = True
 
 def main(): # puts the whole game in a game loop. 
     global game_over
 
     print("******Welcome to Battleships Commander******")
-    print("You are equiped with 30 rounds of ammo, beware as there is 5 battleships to be destroyed.\nMay the gods of war be on your side and good luck!")
+    print("You are equiped with 60 rounds of ammo, beware as there is 5 battleships to be destroyed.\nMay the gods of war be on your side and good luck!")
 
     construct_game_field()
 
