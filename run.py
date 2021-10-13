@@ -44,9 +44,9 @@ vertical_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" # variable for vertical grid
                     
 
 
-
-def validate_position_and_place_battleship(begin_column, end_column, begin_row, end_row):
-    
+# Function will check the rows and the columns in the game field in order to correctly place the battleship on the field
+# by preventing overlap with the already placed battleship.
+def validate_position_and_place_battleship(begin_column, end_column, begin_row, end_row):   
     global game_field
     global battleship_coordinates
 
@@ -63,9 +63,9 @@ def validate_position_and_place_battleship(begin_column, end_column, begin_row, 
                 game_field[i][j] = "O"
     return all_positions_validated
 
-    
+# By refering to the previous function, the function below will place the battleship in one of the possible four dirrections,
+# up, down, left, right.
 def attempt_to_place_battleship_on_field(row, column, orientation, size):
-
     global game_field_size
 
     begin_row, end_row, begin_column, end_column = row, row + 1, column, column + 1
@@ -79,7 +79,6 @@ def attempt_to_place_battleship_on_field(row, column, orientation, size):
             return False
         end_column = column + size
 
-
     elif orientation == "up":
         if row - size < 0:
             return False
@@ -92,7 +91,8 @@ def attempt_to_place_battleship_on_field(row, column, orientation, size):
 
     return validate_position_and_place_battleship(begin_row, end_row, begin_column, end_column)
 
-
+# Function is used to create the game field in 10x10 grid.
+# Battleships will be randomly placed in different directions and sizes.
 def construct_game_field():
     global game_field
     global game_field_size
@@ -103,7 +103,6 @@ def construct_game_field():
 
     rows, columns = (game_field_size, game_field_size)
 
-    
     game_field = []
     for r in range(rows):
         row = []
@@ -123,8 +122,8 @@ def construct_game_field():
         if attempt_to_place_battleship_on_field(random_row, random_column, orientation, battleship_size):
             amount_of_placed_battleships += 1
 
+# This function prints out the game field in a 10x10 grid consisting of A to J rows and 0 to 9 columns.
 def print_game_field():
-    
     global game_field
     global vertical_letters
 
@@ -149,9 +148,9 @@ def print_game_field():
         print(str(i), end=" ")
     print("")
 
-
+# function uses the input method to record players choice on the grid, 
+# and also validates if the imput was written in correct form based on the player's input.
 def confirm_valid_shot_placement():
- 
     global vertical_letters
     global game_field
 
@@ -185,8 +184,9 @@ def confirm_valid_shot_placement():
 
     return row, column
 
+# This function checks if a battleship has been completely destroyed.
+# If the battleship was destroyed the function will also increment global variable: num_of_destroyed_battleships.
 def validate_battleship_destroyed(row, column):
-    
     global battleship_coordinates
     global game_field
 
@@ -203,8 +203,9 @@ def validate_battleship_destroyed(row, column):
                         return False
     return True
 
+# According to the coordinates where the shot has landed the function will update the game field
+# using the previous function: confirm_valid_shot_placement
 def fire_shot():
-    
     global game_field
     global num_of_destroyed_battleships
     global ammo_left
@@ -227,8 +228,9 @@ def fire_shot():
 
     ammo_left -= 1
 
+# taking in account the remaining ammmunition and the number of destroyed battleships
+# the function will determine if a game was a win or loss.
 def validate_if_game_over():
-    
     global num_of_destroyed_battleships
     global amount_of_battleships
     global ammo_left
@@ -242,7 +244,6 @@ def validate_if_game_over():
         game_over = True
 
 def main():
-    
     global game_over
 
     print("******Welcome to Battleships Commander******")
