@@ -106,7 +106,8 @@ def attempt_to_place_battleship_on_field(
 
     global game_field_size
 
-    begin_row, end_row, begin_column, end_column = row, row + 1, column, column + 1
+    begin_row, end_row, begin_column, end_column = (
+        row, row + 1, column, column + 1)
 
     """the condition will check if the battleship is trying
        to be placed outside the limits of the game field.
@@ -229,7 +230,7 @@ def confirm_valid_shot_placement():
         position = input("Please enter row (A-J) and column" +
                          " (0-9), valid example: B7:\n")
         position = position.upper()
-        if len(position) <= 0 or len(position) > 2:
+        if len(position) <= 1 or len(position) > 2:
             print(
                 "Error: Please check to input only" +
                 " one row and column such as B7")
@@ -237,19 +238,19 @@ def confirm_valid_shot_placement():
         row = position[0]
         column = position[1]
         if not row.isalpha() or not column.isnumeric():
-            print("Error: Please input a leter from (A-J) for row," +
+            print("Error: Please input a letter from (A-J) for row," +
                   " and number from (0-9) for column")
             continue
         row = vertical_letters.find(row)
         if not (-1 < row < game_field_size):
             print(
-                "Error: Please input a leter from (A-J) for row," +
+                "Error: Please input a letter from (A-J) for row," +
                 " and number from (0-9) for column")
             continue
         column = int(column)
         if not (-1 < column < game_field_size):
             print(
-                "Error: Please input a leter from (A-J) for row," +
+                "Error: Please input a letter from (A-J) for row," +
                 " and number from (0-9) for column")
             continue
         if game_field[row][column] == "!" or game_field[row][column] == "X":
@@ -277,7 +278,8 @@ def validate_battleship_destroyed(row, column):
         end_row = coordinate[1]
         begin_column = coordinate[2]
         end_column = coordinate[3]
-        if begin_row <= row <= end_row and begin_column <= column <= end_column:
+        if (begin_row <= row <= end_row) and (
+                begin_column <= column <= end_column):
             for i in range(begin_row, end_row):
                 for j in range(begin_column, end_column):
                     if game_field[i][j] != "X":
