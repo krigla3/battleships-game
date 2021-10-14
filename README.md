@@ -1,0 +1,1 @@
+![game_preview](https://github.com/krigla3/battleships-game/blob/main/docs/game_preview.jpg)
