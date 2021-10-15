@@ -109,15 +109,15 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 
         If the user inputs more than one letter and more than one number, the following error message appears:
 
-![python_validator](https://github.com/krigla3/battleships-game/blob/main/docs/error_one.gif) 
+![error_one](https://github.com/krigla3/battleships-game/blob/main/docs/error_one.gif) 
 
         If the user enters the input in wrong order such as 7D instead of D7, the following error message appears:
 
-<screenshot>
+
 
         If the user enters an input greater than A – J or greater than 0 – 9, the following error message appears:
 
-<screenshot>
+![error_two](https://github.com/krigla3/battleships-game/blob/main/docs/error_two.gif)
 
         If the user tries to place a shot on the grid spaces that have previously been marked by ‘X’ for hit or ‘!’ for miss, the following error message appears:
 
