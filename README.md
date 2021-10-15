@@ -45,5 +45,11 @@ When a user misses, a message in the terminal reads “Shot missed, no battleshi
 
 When a user strikes a part of a battleship, a message in terminal reads “Battleship was hit!”
 
+![battleship_hit](https://github.com/krigla3/battleships-game/blob/main/docs/battleship_hit.gif)
+
+When all points of a battleship are hit, a message in the terminal reads “Hit!!! Battleship destroyed!!!”
+
+
+
 
 
