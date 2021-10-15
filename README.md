@@ -64,11 +64,15 @@ When all points of a battleship are hit, a message in the terminal reads “Hit!
 
 ## Testing
 
+
 ### Validator testing
 
 I have tested the code by passing it through PEP8 online Python validator to ensure there are no problems.
 
 ![python_validator](https://github.com/krigla3/battleships-game/blob/main/docs/python_validator.jpg)
+
+
+### Bugs / Other
 
 
 ### Other testing
@@ -154,13 +158,46 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 
         Winning the game (all battleships are destroyed):
 
-<screenshot>
+![error_five](https://github.com/krigla3/battleships-game/blob/main/docs/error_five.gif)
 
         Losing the game (all ammunition used before all battleships destroyed):
 
-<screenshot>
+![error_six](https://github.com/krigla3/battleships-game/blob/main/docs/error_six.gif)
 
 
+## Technologies
+
+* Python was used as the programming language to create the game.
+
+* GitHub has been used to store the code, images and other content.
+
+* Heroku was used in order to deploy the game to the web.
+
+* Git was used to track changes, commit and push the code to the repository throughout the project.
+
+
+## Deployment
+
+The below steps were followed to deploy this project to Heroku:
+
+1. Go to Heroku and click "New" to create a new app.
+
+2. After choosing the app name and setting the region, press "Create app".
+
+3. Go to "Settings" and navigate to Config Vars. Add a Config Var with a key word of called PORT and a value of 8000.
+
+4. Still in the "Settings", navigate to Buildpacks and add buildpacks for Python and NodeJS (in order).
+
+5. Leave "Settings" and go to "Deploy". Scroll down and set Deployment Method to GitHub. 
+   Once GitHub is chosen, find your repository and connect it to Heroku.
+
+6. Scroll down to Manual Deploy, make sure the "main" branch is selected and click "Deploy Branch".
+   The deployed app can be found [here](https://battleship-game1.herokuapp.com/).
+
+
+## Credits
+
+I’d like to thank my mentor Daisy McGirr for her constant support and encouragement throughout the project.
 
 
 
