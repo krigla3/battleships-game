@@ -246,7 +246,7 @@ The below steps were followed to deploy this project to Heroku:
 ## Credits
 
 * [Python battleships tutorial ](https://www.youtube.com/watch?v=7Ki_2gr0rsE) Youtube tutorial on battleships game with Python.
-* [Python battleships tutorial](https://www.youtube.com/watch?v=MgJBgnsDcF0) A tutorial for creating a game of battleships with python.
+* [Python battleships tutorial](https://www.youtube.com/watch?v=MgJBgnsDcF0) A tutorial for creating a game of battleships with Python.
 
 I’d like to thank my mentor Daisy Mc Girr for her constant support and encouragement throughout the project.
 
