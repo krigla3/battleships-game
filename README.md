@@ -62,6 +62,15 @@ When all points of a battleship are hit, a message in the terminal reads “Hit!
 * Display hits and misses in separate colours instead of black and white
 
 
+## Testing
+
+I have tested the code by passing it through PEP8 online Python validator to ensure there are no problems.
+
+
+
+
+
+
 
 
 
