@@ -77,90 +77,90 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 
 ### Other testing
 
-    1. Testing validate_position_and_place_battleship()
+1. Testing validate_position_and_place_battleship()
 
-       The function is intended to place battleships of sizes 3-5 spaces randomly on the game field 
-       in four directions without having any battleships overlap. To ensure this is properly tested, 
-       I introduced a test mode variable which shows the placement of the battleships. 
-       Through multiple game restarts I was able to confirm that no battleships overlap 
-       and the feature runs as expected.
+   The function is intended to place battleships of sizes 3-5 spaces randomly on the game field 
+   in four directions without having any battleships overlap. To ensure this is properly tested, 
+   I introduced a test mode variable which shows the placement of the battleships. 
+   Through multiple game restarts I was able to confirm that no battleships overlap 
+   and the feature runs as expected.
 
-    2. Testing attempt_to_place_battleship_on_field()
+2. Testing attempt_to_place_battleship_on_field()
 
-       If the function validate_position_and_place_battleship() returns ‘True’ this means that 
-       no battleship has overlapped and the battleship is placed on the field through the 
-       attempt_to_place_battleship_on_field() function.
+   If the function validate_position_and_place_battleship() returns ‘True’ this means that 
+   no battleship has overlapped and the battleship is placed on the field through the 
+   attempt_to_place_battleship_on_field() function.
 
-    3. Testing construct_game_field()
+3. Testing construct_game_field()
 
-       The purpose of the function is to create 10 rows and 10 columns resulting in a 10 x 10 grid 
-       where battleships are randomly placed. By initially running the game, 
-       we can see that the 10 by 10 grid is correctly displayed. 
+   The purpose of the function is to create 10 rows and 10 columns resulting in a 10 x 10 grid 
+   where battleships are randomly placed. By initially running the game, 
+   we can see that the 10 by 10 grid is correctly displayed. 
 
-    4. Testing print_game_field()
+4. Testing print_game_field()
 
-       The purpose of the function is to print the grid containing rows A – J and columns 0 – 9 
-       and the relevant shot indicator symbols ‘X’, ‘!’ and ‘~’ to the Python terminal. 
-       Upon running the game in the terminal, the grid is displayed correctly. 
-       This has been tested through the test mode below that reveals the battleship placement.
+   The purpose of the function is to print the grid containing rows A – J and columns 0 – 9 
+   and the relevant shot indicator symbols ‘X’, ‘!’ and ‘~’ to the Python terminal. 
+   Upon running the game in the terminal, the grid is displayed correctly. 
+   This has been tested through the test mode below that reveals the battleship placement.
 
-       To display the placed ships, the print statement in test_mode should contain “0”:
+   To display the placed ships, the print statement in test_mode should contain “0”:
 
-       if game_field[row][column] == “0”:
-            if test_mode:
-                print(“0”, end=(“ ”)
+   if game_field[row][column] == “0”:
+         if test_mode:
+               print(“0”, end=(“ ”)
 
-        To hide the placed ships, the print statement in test_mode should be changed to “~”:
+   To hide the placed ships, the print statement in test_mode should be changed to “~”:
 
-        if game_field[row][column] == “0”:
-            if test_mode:
-                print(“~”, end=(“ ”)
+   if game_field[row][column] == “0”:
+         if test_mode:
+               print(“~”, end=(“ ”)
 
-        All symbols are displaying the correct output.
+   All symbols are displaying the correct output.
 
-    5. Testing confirm_valid_shot_placement()
+5. Testing confirm_valid_shot_placement()
 
-        The function tests if the user has entered a valid input from the rows A – J and columns 0 – 9 
-        in the form that it has been requested in. If the user enters an invalid input, 
-        they will receive one of the following error messages in the terminal:
+   The function tests if the user has entered a valid input from the rows A – J and columns 0 – 9 
+   in the form that it has been requested in. If the user enters an invalid input, 
+   they will receive one of the following error messages in the terminal:
 
-        If the user inputs more than one letter and more than one number, the following error message appears:
+   If the user inputs more than one letter and more than one number, the following error message appears:
 
 ![error_one](https://github.com/krigla3/battleships-game/blob/main/docs/error_one.gif) 
 
-        If the user enters the input in wrong order such as 7D instead of D7, the following error message appears:
+   If the user enters the input in wrong order such as 7D instead of D7, the following error message appears:
 
 ![error_three](https://github.com/krigla3/battleships-game/blob/main/docs/error_three.gif)
 
-        If the user enters an input greater than A – J or greater than 0 – 9, the following error message appears:
+   If the user enters an input greater than A – J or greater than 0 – 9, the following error message appears:
 
 ![error_two](https://github.com/krigla3/battleships-game/blob/main/docs/error_two.gif)
 
-        If the user tries to place a shot on the grid spaces that have previously been marked by ‘X’ for hit or ‘!’ for miss, 
-        the following error message appears:
+   If the user tries to place a shot on the grid spaces that have previously been marked by ‘X’ for hit or ‘!’ for miss, 
+   the following error message appears:
 
 ![error_four](https://github.com/krigla3/battleships-game/blob/main/docs/error_four.gif)
 
-    6. Testing validate_battleship_destroyed()
+6. Testing validate_battleship_destroyed()
 
-       The function validates if all parts of the ship have been hit, 
-       in other words it checks if the ship has been completely destroyed. 
+   The function validates if all parts of the ship have been hit, 
+   in other words it checks if the ship has been completely destroyed. 
 
-    7. Testing fire_shot()
+7. Testing fire_shot()
 
-       The function ensures that the grid field displays the correct symbol depending on if the ship was hit or missed. 
-       Through the test_mode mentioned previously, I tested all grid spaces by increasing the ammo_left variable value to 200. 
-       All grid space showed correct symbols.
+   The function ensures that the grid field displays the correct symbol depending on if the ship was hit or missed. 
+   Through the test_mode mentioned previously, I tested all grid spaces by increasing the ammo_left variable value to 200. 
+   All grid space showed correct symbols.
 
-    8. Testing validate_if_game_over()
+8. Testing validate_if_game_over()
 
-        The function checks if the game is over, by either:
+   The function checks if the game is over, by either:
 
-        Winning the game (all battleships are destroyed):
+   Winning the game (all battleships are destroyed):
 
 ![error_five](https://github.com/krigla3/battleships-game/blob/main/docs/error_five.gif)
 
-        Losing the game (all ammunition used before all battleships destroyed):
+   Losing the game (all ammunition used before all battleships destroyed):
 
 ![error_six](https://github.com/krigla3/battleships-game/blob/main/docs/error_six.gif)
 
