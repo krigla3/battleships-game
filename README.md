@@ -24,4 +24,4 @@ When all points of a battleship are hit, a message in the terminal reads “Hit!
 
     2, The user is presented with a 10 x 10 grid game board featuring a vertical (A – J) and a horizontal axis (0 – 9).
 
-![game_grid]()
+![game_grid](https://github.com/krigla3/battleships-game/blob/main/docs/game_grid.jpg)
