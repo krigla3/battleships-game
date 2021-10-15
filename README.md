@@ -1,8 +1,8 @@
-# Battleship game
+# Battleships game
 
 
 
-A single player Command Line Interface Python game of Battleship.
+A single player Command Line Interface Python game of Battleships.
 
 ![game_preview](https://github.com/krigla3/battleships-game/blob/main/docs/game_preview.jpg)
 
@@ -34,14 +34,14 @@ When all points of a battleship are hit, a message in the terminal reads “Hit!
    ![game_grid](https://github.com/krigla3/battleships-game/blob/main/docs/game_grid.jpg)
 
 
-3. The user is shown the number of battleships he needs to find (5) and the number of tries available (60). 
+3. The user is shown the number of battleships they need to find (5) and the number of tries available (60). 
    The battleships range between 3 – 5 spaces on the grid, and are concealed behind the wave symbols until hit.
    
    ![ammo-battleships](https://github.com/krigla3/battleships-game/blob/main/docs/ammo-battleships.jpg)
 
 
 4. Lastly, the user is shown instructions on how to play the game. 
-   User isinstructed to choose a point on the vertical axis and the horizontal axis, for
+   User is instructed to choose a point on the vertical axis and the horizontal axis, for
    example ‘C7’ and then to press enter for the strike to release.
 
    ![play_instructions](https://github.com/krigla3/battleships-game/blob/main/docs/play_instructions.jpg)
@@ -67,7 +67,7 @@ When all points of a battleship are hit, a message in the terminal reads “Hit!
 
 ## Future Features
 
-   * Make the game multiplayer
+   * Make the game a multiplayer
    * Ability to enter username
    * Leaderboard
    * Ability to place your own ships to play against the AI or between two players
@@ -86,7 +86,30 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 ![python_validator](https://github.com/krigla3/battleships-game/blob/main/docs/python_validator.jpg)
 
 
-### Bugs / Other
+### Bugs 
+
+1. As I was testing the game and player inputs I noticed that the game ran into a bug once a user makes a mistake
+   and inputs only one row or only one column for his placement. The result of this bug was that no error message was 
+   appearing to instruct the user to correct his input into row and column rather than just inputting the letter of 
+   the row or number of the column. I addressed this issue by changing the following line of code:
+
+   position = position.upper()
+        if len(position) <= 1 or len(position) > 2:
+            print(
+                "Error: Please check to input only" +
+                " one row and column such as B7")
+   
+   In the initial code my if statement was causing this bug as it was set to:  
+   
+         if len(position) <= 0 or len(position) > 2:
+   
+   Adjusting the value to be less or equal to one instead of zero made the code compliant with a single row or single column input.
+
+
+2. Upon finishing the game by either winning or losing the game the last user input is not correctly logged on the game grid.
+   The user is prompted with the correct message, however the game grid does not log the last input depending if it was a hit or a miss.
+   Result of this bug is the last input that is not updated on the game grid, the "~" symbol stays present.
+   This bug is still a work in progress as I did not manage to solve the issue before my project deadline.
 
 
 ### Other testing
@@ -194,11 +217,11 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 
 * Python was used as the programming language to create the game.
 
-* GitHub has been used to store the code, images and other content.
+* [GitHub](https://github.com/)has been used to store the code, images and other content.
 
-* Heroku was used in order to deploy the game to the web.
+* [Gitpod](https://www.gitpod.io/) was used to track changes made to the project and to commit and push code to the repository.
 
-* Git was used to track changes, commit and push the code to the repository throughout the project.
+* [Heroku](https://dashboard.heroku.com/apps) was used in order to deploy the game to the web.
 
 
 ## Deployment
@@ -222,7 +245,7 @@ The below steps were followed to deploy this project to Heroku:
 
 ## Credits
 
-I’d like to thank my mentor Daisy McGirr for her constant support and encouragement throughout the project.
+I’d like to thank my mentor Daisy Mc Girr for her constant support and encouragement throughout the project.
 
 
 
