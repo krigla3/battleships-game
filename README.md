@@ -26,53 +26,53 @@ When all points of a battleship are hit, a message in the terminal reads “Hit!
 
 1. The game features an introduction to the user before they start the game.
 
-![game_introduction](https://github.com/krigla3/battleships-game/blob/main/docs/game_introduction.jpg)
+   ![game_introduction](https://github.com/krigla3/battleships-game/blob/main/docs/game_introduction.jpg)
 
 
 2. The user is presented with a 10 x 10 grid game board featuring a vertical (A – J) and a horizontal axis (0 – 9).
 
-![game_grid](https://github.com/krigla3/battleships-game/blob/main/docs/game_grid.jpg)
+   ![game_grid](https://github.com/krigla3/battleships-game/blob/main/docs/game_grid.jpg)
 
 
 3. The user is shown the number of battleships he needs to find (5) and the number of tries available (60). 
    The battleships range between 3 – 5 spaces on the grid, and are concealed behind the wave symbols until hit.
    
-![ammo-battleships](https://github.com/krigla3/battleships-game/blob/main/docs/ammo-battleships.jpg)
+   ![ammo-battleships](https://github.com/krigla3/battleships-game/blob/main/docs/ammo-battleships.jpg)
 
 
 4. Lastly, the user is shown instructions on how to play the game. 
    User isinstructed to choose a point on the vertical axis and the horizontal axis, for
    example ‘C7’ and then to press enter for the strike to release.
 
-![play_instructions](https://github.com/krigla3/battleships-game/blob/main/docs/play_instructions.jpg)
+   ![play_instructions](https://github.com/krigla3/battleships-game/blob/main/docs/play_instructions.jpg)
 
 
 5. Win and loss announcements are shown throughout the game:
 
-When a user misses, a message in the terminal reads “Shot missed, no battleship was hit.”
+   When a user misses, a message in the terminal reads “Shot missed, no battleship was hit.”
 
-![user-miss](https://github.com/krigla3/battleships-game/blob/main/docs/user-miss.gif)
-
-
-When a user strikes a part of a battleship, a message in terminal reads “Battleship was hit!”
-
-![battleship_hit](https://github.com/krigla3/battleships-game/blob/main/docs/battleship_hit.gif)
+   ![user-miss](https://github.com/krigla3/battleships-game/blob/main/docs/user-miss.gif)
 
 
-When all points of a battleship are hit, a message in the terminal reads “Hit!!! Battleship destroyed!!!”
+   When a user strikes a part of a battleship, a message in terminal reads “Battleship was hit!”
 
-![battleship_destroyed](https://github.com/krigla3/battleships-game/blob/main/docs/battleship_destroyed.gif)
+   ![battleship_hit](https://github.com/krigla3/battleships-game/blob/main/docs/battleship_hit.gif)
+
+
+   When all points of a battleship are hit, a message in the terminal reads “Hit!!! Battleship destroyed!!!”
+
+   ![battleship_destroyed](https://github.com/krigla3/battleships-game/blob/main/docs/battleship_destroyed.gif)
 
 
 
 ## Future Features
 
-* Make the game multiplayer
-* Ability to enter username
-* Leaderboard
-* Ability to place your own ships to play against the AI or between two players
-* Option to increase the grid, number of ammunition and ships per game
-* Display hits and misses in separate colours instead of black and white
+   * Make the game multiplayer
+   * Ability to enter username
+   * Leaderboard
+   * Ability to place your own ships to play against the AI or between two players
+   * Option to increase the grid, number of ammunition and ships per game
+   * Display hits and misses in separate colours instead of black and white
 
 
 
@@ -144,23 +144,23 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 
    If the user inputs more than one letter and more than one number, the following error message appears:
 
-![error_one](https://github.com/krigla3/battleships-game/blob/main/docs/error_one.gif) 
+   ![error_one](https://github.com/krigla3/battleships-game/blob/main/docs/error_one.gif) 
 
 
    If the user enters the input in wrong order such as 7D instead of D7, the following error message appears:
 
-![error_three](https://github.com/krigla3/battleships-game/blob/main/docs/error_three.gif)
+   ![error_three](https://github.com/krigla3/battleships-game/blob/main/docs/error_three.gif)
 
 
    If the user enters an input greater than A – J or greater than 0 – 9, the following error message appears:
 
-![error_two](https://github.com/krigla3/battleships-game/blob/main/docs/error_two.gif)
+   ![error_two](https://github.com/krigla3/battleships-game/blob/main/docs/error_two.gif)
 
 
    If the user tries to place a shot on the grid spaces that have previously been marked by ‘X’ for hit or ‘!’ for miss, 
    the following error message appears:
 
-![error_four](https://github.com/krigla3/battleships-game/blob/main/docs/error_four.gif)
+   ![error_four](https://github.com/krigla3/battleships-game/blob/main/docs/error_four.gif)
 
 
 6. Testing validate_battleship_destroyed()
@@ -182,12 +182,12 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 
    Winning the game (all battleships are destroyed):
 
-![error_five](https://github.com/krigla3/battleships-game/blob/main/docs/error_five.gif)
+   ![error_five](https://github.com/krigla3/battleships-game/blob/main/docs/error_five.gif)
 
 
    Losing the game (all ammunition used before all battleships destroyed):
 
-![error_six](https://github.com/krigla3/battleships-game/blob/main/docs/error_six.gif)
+   ![error_six](https://github.com/krigla3/battleships-game/blob/main/docs/error_six.gif)
 
 
 ## Technologies
