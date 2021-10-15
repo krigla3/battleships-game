@@ -109,7 +109,7 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 
         If the user inputs more than one letter and more than one number, the following error message appears:
 
-<screenshot>
+![python_validator](https://github.com/krigla3/battleships-game/blob/main/docs/error_one.gif) 
 
         If the user enters the input in wrong order such as 7D instead of D7, the following error message appears:
 
