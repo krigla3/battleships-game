@@ -22,6 +22,19 @@ When all points of a battleship are hit, a message in the terminal reads “Hit!
 
 ![game_introduction](https://github.com/krigla3/battleships-game/blob/main/docs/game_introduction.jpg)
 
-    2, The user is presented with a 10 x 10 grid game board featuring a vertical (A – J) and a horizontal axis (0 – 9).
+    2. The user is presented with a 10 x 10 grid game board featuring a vertical (A – J) and a horizontal axis (0 – 9).
 
 ![game_grid](https://github.com/krigla3/battleships-game/blob/main/docs/game_grid.jpg)
+
+    3. The user is shown the number of battleships he needs to find (5) and the number of tries available (60). 
+       The battleships range between 3 – 5 spaces on the grid, and are concealed behind the wave symbols until hit.
+
+![ammo-battleships](https://github.com/krigla3/battleships-game/blob/main/docs/ammo-battleships.jpg)
+
+    4. Lastly, the user is shown instructions on how to play the game. 
+       User isinstructed to choose a point on the vertical axis and the horizontal axis, for
+       example ‘C7’ and then to press enter for the strike to release.
+
+![ammo-battleships](https://github.com/krigla3/battleships-game/blob/main/docs/ammo-battleships.jpg)
+
+
