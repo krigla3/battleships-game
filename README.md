@@ -49,6 +49,22 @@ When a user strikes a part of a battleship, a message in terminal reads “Battl
 
 When all points of a battleship are hit, a message in the terminal reads “Hit!!! Battleship destroyed!!!”
 
+![battleship_destroyed](https://github.com/krigla3/battleships-game/blob/main/docs/battleship_destroyed.gif)
+
+
+## Future Features
+
+* Make the game multiplayer
+* Ability to enter username
+* Leaderboard
+* Ability to place your own ships to play against the AI or between two players
+* Option to increase the grid, number of ammunition and ships per game
+* Display hits and misses in separate colours instead of black and white
+
+
+
+
+
 
 
 
