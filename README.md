@@ -35,6 +35,15 @@ When all points of a battleship are hit, a message in the terminal reads “Hit!
        User isinstructed to choose a point on the vertical axis and the horizontal axis, for
        example ‘C7’ and then to press enter for the strike to release.
 
-![ammo-battleships](https://github.com/krigla3/battleships-game/blob/main/docs/ammo-battleships.jpg)
+![play_instructions](https://github.com/krigla3/battleships-game/blob/main/docs/play_instructions.jpg)
+
+    5. Win and loss announcements are shown throughout the game:
+
+When a user misses, a message in the terminal reads “Shot missed, no battleship was hit.”
+
+![user-miss](https://github.com/krigla3/battleships-game/blob/main/docs/user-miss.gif)
+
+When a user strikes a part of a battleship, a message in terminal reads “Battleship was hit!”
+
 
 
