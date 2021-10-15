@@ -113,7 +113,7 @@ I have tested the code by passing it through PEP8 online Python validator to ens
 
         If the user enters the input in wrong order such as 7D instead of D7, the following error message appears:
 
-
+![error_three](https://github.com/krigla3/battleships-game/blob/main/docs/error_three.gif)
 
         If the user enters an input greater than A – J or greater than 0 – 9, the following error message appears:
 
